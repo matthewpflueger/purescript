@@ -1,1 +1,5 @@
 output
+node_modules
+dist
+.psci_modules
+bower_components
