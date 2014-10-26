@@ -27,7 +27,7 @@ findEntryByPhone :: String -> PhoneBook -> Maybe Entry
 findEntryByPhone phone = filter (\e -> e.phone == phone) >>> head
 
 hasEntry :: String -> String -> PhoneBook -> Boolean
-hasEntry firstName lastName book = isJust $ findEntry firstName lastName book
+hasEntry firstName lastName = isJust <<< findEntry firstName lastName
 
 removeDuplicates :: PhoneBook -> PhoneBook
 removeDuplicates = nubBy (\a b -> a.firstName == b.firstName && a.lastName == b.lastName && a.phone == b.phone)
